@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Neuseelandbilder</title>
+<link rel="stylesheet" type="text/css" href="leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="index.css" />
+    
+	<script type="text/javascript" src="style/js/jquery.aw-showcase.js"></script>
+	
+
+</head>
+
+<body bgcolor="#3A3737">
+
+<div class="bildmitbildunterschrift">
+	<image src="panorama.png"  Width="100%" alt="panorama" /> 
+	
+	</div>
+
+<!-- Beginn Menu -->   
+<nav>
+            <ul>
+                <li class = "cat1">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class = "cat2">
+                    <a href="Australien.html">Australien</a>
+                    
+                </li>
+                <li class = "cat3">
+                     <a href="Neuseeland.html">Neuseeland</a>
+                     
+                </li>
+                <li class = "cat4">
+                    <a href="Pictures.html">Bildern</a>
+                    <ul>
+                        <li><a href="PicturesAus.html">Australien</a></li>
+                        <li><a href="PicturesNeu.html">Neuseeland</a></li>
+           
+                    </ul>
+                </li>
+                <li class = "cat5">
+                    <a href="Kontakt.html">Kontakt</a>
+               
+                </li>
+				 <li class = "cat6">
+                    <a href="impressum.html">Impressum</a>
+               
+                </li>
+				 <li class = "cat6">
+                    <a href="AGB.html">AGB`S</a>
+               
+                </li>
+				
+				<li class = "cat6">
+                    <a href="sitemap.html">Sitemap</a>
+               
+                </li>
+            </ul>
+        </nav>
+		<!-- Ende Menu -->
+
+
+	<br/>	<br/> <br/> <br/><br/>	<br/> <br/><br/>	<br/> 
+	
+<center>	
+
+<!-- Beginn Slideshow--> 
+<div id="container">
+
+	<ul>
+      	<li><img src="Neu1.jpg" width="604" height="453" /></li>
+            <li><img src="Neu2.jpg" width="604" height="453" /></li>
+            <li><img src="Neu3.jpg" width="604" height="453" /></li>
+			<li><img src="Neu4.jpg" width="604" height="453" /></li>
+      </ul>
+      <span class="button prevButton"></span>
+      <span class="button nextButton"></span>
+</div>
+</center>
+
+<script src="jquery-1.4.2.min.js"></script>
+
+<script>
+$(window).load(function(){
+		var pages = $('#container li'), current=0;
+		var currentPage,nextPage;
+		var handler=function(){
+			$('#container .button').unbind('click');
+			currentPage= pages.eq(current);
+			if($(this).hasClass('prevButton'))
+			{
+				if (current <= 0)
+					current=pages.length-1;
+				else
+					current=current-1;
+				nextPage = pages.eq(current);	
+
+				nextPage.css("marginLeft",-604);
+				nextPage.show();
+				nextPage.animate({ marginLeft: 0 }, 800,function(){
+					currentPage.hide();
+				});
+				currentPage.animate({ marginLeft: 604 }, 800,function(){
+					$('#container .button').bind('click',handler);
+				});
+			}
+			else
+			{
+
+				if (current >= pages.length-1)
+					current=0;
+				else
+					current=current+1;
+				nextPage = pages.eq(current);	
+
+				nextPage.css("marginLeft",604);
+				nextPage.show();
+				nextPage.animate({ marginLeft: 0 }, 800,function(){
+				});
+				currentPage.animate({ marginLeft: -604 }, 800,function(){
+					currentPage.hide();
+					$('#container .button').bind('click',handler);
+				});
+			}
+		}
+
+		$('#container .button').click(handler);
+		
+});
+
+</script>
+	  
+
+<!--Ende Slideshow-->
+</center> 
+	
+<br />	<br /> <br /><br /><br />
+
+
+
+
+</div> 
+</body>
+</html>
