@@ -1,0 +1,414 @@
+﻿<he<!DOCTYPE html>
+<html>
+<head>
+	<title>Reisen Australien & Neuseeland</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="index.css" />
+    
+	<script type="text/javascript" src="style/js/jquery.aw-showcase.js"></script>
+		
+</head>
+
+
+
+
+
+<body bgcolor="#3A3737">
+
+<header align="center">
+
+<div class="bildmitbildunterschrift">
+	<image src="panorama.png"  Width="100%" alt="panorama" /> 
+	
+	</div>
+
+	
+
+<!-- Beginn Menu -->   
+<nav>
+            <ul>
+                <li class = "cat1">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class = "cat2">
+                    <a href="Australien.html">Australien</a>
+      
+                </li>
+                <li class = "cat3">
+                     <a href="Neuseeland.html">Neuseeland</a>
+                     
+                </li>
+                              
+				 <li class = "cat6">
+                    <a href="impressum.html">Impressum</a>
+               
+                </li>
+				 <li class = "cat6">
+                    <a href="AGB.html">AGB`S</a>
+               
+                </li>
+			
+            </ul>
+        </nav>
+		<!-- Ende Menu -->
+
+		
+	<br/> <br/> <br/> 
+
+<h1 align="center"> <font face="Arial" font color="white"> Reisen in und um Australien </font>  </h1>	
+
+<br/> <br/> 		
+</header>
+
+	
+<br/> <br/>
+	
+ 
+ 
+ <!-- Beginn Showcase -->
+    
+     <!--  <div class="showcase-slide" align="center"> 
+        
+        <div class="showcase-content"> <iframe src="http://panorama.easyvoyage.com/videos/pays/au/1_de_DE.mp4" width="60%" height="60%"></iframe> </div>
+      </div> -->
+      
+    <!-- Ende Showcase -->
+ 
+ 
+ 
+
+<div align="center">
+
+<!-- <br/>	<br/> <br/> <br/> -->
+<P> <HR size="1px" width="80%"> </P>
+<br/>	<br/> 
+ 
+ <h2> <font face="Arial" font color="white">Das reisen... </font></h2>
+ 
+      <p> <font face="Arial" font color="white"> Der Sinn des Reisens besteht darin,
+unsere Phantasien durch die Wirklichkeit zu korrigieren.
+Statt uns die Welt vorzustellen, wie sie sein könnte,
+sehen wir sie wie sie ist. </font></p> <br>
+<p> <font face="Arial" font color="white"> Samuel Johnson (1696 - 1772)  </font></p>
+
+<br/>	<br/> 
+<P> <HR size="1px" width="80%"> </P>
+<br/>	<br/> <br/> <br/>    
+	
+ 
+ 
+ 
+ 
+	<p> <div id="map" style="width: 90%; height: 100%" align="center"></div> </p>
+	
+	<script type="text/javascript" src="leaflet-0.7.3/leaflet-src.js"></script>
+	
+
+	
+	<script>
+	
+			
+	
+	var map = L.map('map', {
+			center: [-39.53738, 158.75684],
+			zoom: 5
+		});	
+  
+  
+
+	
+        		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+			maxZoom: 18,	
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'tip-beuth.km61n1no'
+		}).addTo(map);
+            
+		<!-- Begin Icons -->	
+
+		
+	var greenIcon = L.icon({
+        iconUrl: 'leaf-green.png',
+        shadowUrl: 'leaf-shadow.png',
+
+        iconSize:     [38, 95], // size of the icon
+        shadowSize:   [50, 64], // size of the shadow
+        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        shadowAnchor: [4, 62],  // the same for the shadow
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+    var surfIcon = L.icon({
+        iconUrl: 'surf.png',
+        shadowUrl: 'surfshadow.png',
+   
+        iconSize:     [38, 95], // size of the icon
+        shadowSize:   [50, 64], // size of the shadow
+        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        shadowAnchor: [12, 86],  // the same for the shadow
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        
+    var bedIcon = L.icon({
+        iconUrl: 'bed.png',
+        shadowUrl: 'surfshadow.png',
+   
+        iconSize:     [38, 45], // size of the icon
+        shadowSize:   [50, 64], // size of the shadow
+        iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+        shadowAnchor: [12, 86],  // the same for the shadow
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+		
+		<!-- Begin Marker Anja -->
+		
+		L.marker([-25.822762, 153.075942] , {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Rainbow Beach</b>").closePopup();
+
+		L.marker([-26.381605, 153.08160699999996] , {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Noosa</b> <p>Traumrevier mit breiter Flussmündung, tollem Panorama und kristallklarem Wasser </p><p>Wind: Windrichtung am Rivermouth NE bei SE Sunshine Beach</p> ").closePopup();
+			
+		L.marker([-26.656817, 153.10460999999998], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Maroochydore</b> <p> bis zu 200m breite, sandige Flussmündungen </p>  <p> bei auslaufender Tide für ordentlich Druck</p>  <p>Hinter Flussmündungen liegen weitläufige Flachwasserspielwiesen, auf denen auch Anfänger voll auf ihre Kosten kommen.  </p>  <p> Und im offenen Meer gibt’s natürlich Welle.  </p>").closePopup();
+			
+		L.marker([-26.807984, 153.13293399999998], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Caloundra</b> <p> schmale Flussmündung, wodurch es am Wochenende voll werden kann </p> <p> Anfahrt: auf der Hauptstrasse vom Highway kommend kurz vor den Hochhäusern rechts abbiegen </p><p> Wind: NE - SE </p><p> Stadt selbst und Panaroma eher hässlich,Parkplatz und Duschen direkt am Beach </p>").closePopup();
+
+		L.marker([-28.544568, 153.557281], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Brunswick Heads</b> <p> traumhafte, ruhige Strände & super Wellenreitspot</p> ").closePopup();
+			
+		L.marker([-28.793838, 153.594875], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Lennox Head</b> <p> Der Kitespot der Region - an guten Tagen Locals vor Ort</p><p> Anfahrt: 20 min. südlich von Byron </p> <p>Wind:  NE - E; bei SE besser Byron Bay (südlich vom Leuchtturm) </p> <p> Gute Welle </p> <p>Wiese zum landen </p><p> Kiteshop im Ort; Besitzer (Holländer) ist sehr nett und hilfsbereit </p><p> Strandduschen, Parkplätze, ... vorhanden </p> ").closePopup();
+			
+        L.marker([-31.968182, 152.59563400000002], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Old Bar</b> <p> kleiner Küstenort kurz vor Taree </p> ").closePopup();
+
+        L.marker([-32.68692, 152.18708000000004], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Hawks Nest</b> <p> Traumkulisse mit feinem, hellen Sandstrand,türkisem Wasser und vorgelagerten Inseln. </p>  <p> hohe Windsicherheit</p> <p>Wind: Windrichtung am bogenförmigen Mainbeach N - S </p> <p> Kilometerlanger Beach lädt zu Downwindern ein </p> <p> Ca.1 km südlich der Lifeguardzone kann man über den schmalen  Dünenstreifen gehen und bei NE in spiegelglattem Wasser tricksen , Der Wind ist ablandig, aber ein grosser Stehbereich lässt auch Fehler zu </p> <p> Am Mainbeach choppy und teilweise starker Shorebreak </p><p> Highlight: Täglich kommt eine Gruppe Delphine nahe am Beach vorbei </p> <p> Einziges Manko: Nur eine Stranddusche am gut besuchten Lifeguard Haus </p> <p> Internet findet Ihr in der Videothek von Tea Gardens (5km) </p>  ").closePopup();
+
+		L.marker([-33.592601, 151.326026], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Palm Beach</b> <p> Anfahrt: Spot liegt ganz am Ende von Northern Beaches (weiterfahren is nicht; daher auf der Hauptstrasse von Manly stur geradeaus ca. 30 min.) </p> <p> NE - E (SE sehr böig) </p> <p> Tipp: Trotz vermeintlicher Windabdeckung nahe am Leuchtturm starten, da hier eine südliche Strömung verläuft </p> <p> Zwischen Parkplatz und Beach ist eine ausreichend grosse Wiese, um den Kite zu landen </p> <p> Grosses Seebecken für NW </p> <p> Sehr guter Schlafplatz mit neuen & gepflegten sanitären Anlagen </p>  ").closePopup();	
+			
+		L.marker([-33.746752, 151.303882], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Untitled</b> <p> Super Spot für E - SE Wind (NE sehr böig) </p> <p> Anfahrt: von Manly kommend auf der Pittwater Rd immer geradeaus; Spot liegt ca. 2 km vor Collaroy </p><p>Welle; teilweise starke, quirlige Strömungen </p><p> Ein 15x30 m grosses Süsswasserbecken lädt zum Spielen ein </p><p> Guter Schlafplatz mit alten sanitären Einrichtungen </p> ").closePopup();	
+			
+	    L.marker([-33.97027, 151.153163], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Sidney Botany Bay - Brighton Le Sands</b> <p> kein offenes Meer; Flachwasser z.T. choppy </p> <p> Windrichtung NE - SE </p>  ").closePopup();
+	 
+	    L.marker([-33.994896, 151.14869999999996], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Sidney Botany Bay - Dolls Point </b> <p> beste Wahl in Botany Bay</p> <p> Anfahrt: von Brighton am Beachentlangfahren; ca. 1km nach Kiteshop links abbiegen (Malua St), sofortwieder links in Skinners Ave</p> <p> kein offenes Meer; Flachwsser z.T. choppy </p> <p> Windrichtung NE - SE </p> <p> Keine Stranddusche </p>  <p> Kein Internet in näherer Umgebung </p> <p> Weitere Spots: Kurnell und Cronulla </p> ").closePopup();
+	 
+	    L.marker([-34.007846, 151.20912499999997], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Sidney Botany Bay - Kurnell</b> <p> kein offenes Meer; Flachwsser z.T. choppy </p> <p> Windrichtung NE - SE </p> ").closePopup();
+	 
+        L.marker([-34.05209, 151.15608199999997], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Sidney Botany Bay - Cronulla</b><p> kein offenes Meer; Flachwsser z.T. choppy </p> <p> Windrichtung NE - SE </p>  ").closePopup();
+		
+		L.marker([-35.849822, 150.17778299999998], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Broulee</b><p>Anfänger sind im nahegelegenen Broulee gut aufgehoben </p> <p> schöne Kulisse </p> <p> ;kaum Shorebreak </p>  ").closePopup();
+				
+		L.marker([-35.914635, 150.15769899999998], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Moruya Heads</b> <p> wahnsinnig toller Spot für NE - E </p> <p> liegt sehr versteckt im kleinen Naturreservat von Moruya Heads</p><p> Am relativ grossen Rivermouth mit langer Steinmole laden lange Wellen zum Spielen ein </p> <p> KeinAnfängerspot aufgrund kleinem Beach, Mole und auflandigem Wind </p><p> Direkt hinter dem Beach grosse Wiese zum Materialtrocknen </p> <p> Trotz Einsamkeit Dusche, Toilette und Barbie </p> ").closePopup();
+		
+		L.marker([-36.900489, 149.913253], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Merimbula</b> <p> Am Mainbeach NE - S </p><p> Anfahrt: Am Ortseingang/vor der Brücke rechts </p><p> Kilometerlanger, bogenförmiger und feiner Sandstrand </p><p>Rivermouth und grösserer Stehbereich am nördlichen Ende </p><p>Geringe Strömungen </p><p>Nicht umsonst findet hier jedes Jahr einer der grössten australischen  Contests statt </p><p> Tipp: Wer noch keine Kangaroos gesehen hat, sollte auf den Campingplatz im nahegelegenen Pambula Beach fahren</p> ").closePopup();
+		
+		L.marker([-37.802527, 148.540906], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Marlo</b> <p> Riesiges Stehrevier mit schmalem Channel zum offenen Meer *ein Traum* </p><p> im Meer aufgrund RIPs Vorsicht geboten </p><p> SE - W </p><p> Schmaler Strand zum Starten und Landen </p><p> Keine öffentlichen Duschen/Toiletten (Campingplatz) </p><p> Lage: Nahe der Grenze zu NSW; in Orbost vom Princess Highway abbiegen </p> ").closePopup();
+				
+		L.marker([-37.85871, 144.96650899999997], {icon: surfIcon}).addTo(map)
+			.bindPopup("<b>Melbourne - St. Kilda</b> <p> Stadtspot nahe der City - liegt in St.Kilda (am Pier) </p><p> Windrichtung S - NW </p><p> Nach Aussagen der Locals sind jede Woche einige Windtage dabei; auch häufig Starkwind um 30 kts. </p><p>Flachwasser; am Einstieg dreckig </p><p>Breiter Strand </p><p> Kiteshop und -schule </p> ").closePopup();
+		
+		<!-- Begin Marker Isa -->
+
+  L.marker([-25.262840, 153.143862],{icon: greenIcon}). addTo(map)
+                .bindPopup ("<b>FRASER ISLAND</b> <p>Sandsafari - auf Fraser Island kann man sich nur mit einem Gelänewagen fortbewegen<p/>");
+        
+        L.marker([-26.390158, 153.104380],{icon: greenIcon}). addTo(map)
+                .bindPopup ("<b>NOOSA NATIONAL PARK</b> <p>Ein reizender Nationalpark mit einer herrlichen Küstenlandschaft und Wanderwegen<p/> <p>In den Bäumen kann der Tea Tree Bay kann man schläfrige Koalas beobachten. In der Alexandra Bay lassen sich auch Delfine erspähen <p/>");
+        
+        L.marker([-26.931787, 152.894747],{icon: greenIcon}). addTo(map)
+                .bindPopup ("<b>GLAS HOUSE MOUNTAINS NATIONAL PARK</b> <p>Imposante vulkanische Steilhänge<p/> <p>Picknickplätze sind sehr schön gelegen, meist an einer der zahlreichen Aussichtispunkte<p/>");
+                
+        L.marker([-28.638900, 153.634969],{icon: greenIcon}). addTo(map)
+                .bindPopup ("<b>CAPE BYRON</b> <p>Malerischer Leutturm und ein schöner 4km Wanderweg rund ums Kap auf dem einen Wallababys, Buschhühner und wilde Ziegen übern Weg laufen<p/>");        
+        
+        L.marker([-32.832720, 151.356606],{icon: greenIcon}). addTo(map)
+                .bindPopup ("<b>HUNTER VALLEY - Cessnock</b> <p>Die Weinregion der Ostküste, mit wundervollen Weinfeldern und traumhaft schönen Anwesen auf denen auch gerne Weinproben gemacht werden. Aber ACHTUNG ist ein etwas teureres Vergnügen<p/>");        
+        
+        L.marker([-38.928748, 146.355166],{icon: greenIcon}). addTo(map)
+                .bindPopup ("<b>WILSON PROMONTORY</b> <p>Wer gerne durch die Wildnis wandert, eine atemberaubende Küstenlandschaft und abgeschiedene weiße Sandtrände liebt, ist hier genau richtig<p/>");        
+                
+        L.marker([-33.731951, 150.312398],{icon: greenIcon}). addTo(map)
+                .bindPopup ("<b>THREE SISTERS</b> <p>Der Name kommt vom blauen Dunst der Eukalyptusbäume. Diese vertrömen ihre betäubenden Nebel und lassen die Wälder blau schimmern.<p/>");        
+        
+        
+        
+        L.marker([-30.746001, 152.996232],{icon: bedIcon}). addTo(map)
+                .bindPopup ("<b>SCOTTS HEAD</b> <p>Wunderbarer Platz um die Seele baumeln zu lassen. Weit weg von Backpackern. Ein echter Insidertip in einem Minikaff mit dem leckeresten Bäcker<p/>");        
+                
+        L.marker([-25.841862, 153.071035],{icon: bedIcon}). addTo(map)
+                .bindPopup ("<b>RAINBOW BEACH - Inskip Point</b> <p>Camping in der Wildnis ABER nur mit Genehmigung<p/> <p>wunderschöne Campingplätze direkt am Meer, keine sanitäre Einrichtungen aber dafür Ruhe und Mondschein<p/>");
+        
+        L.marker([-32.749727, 151.100647],{icon: bedIcon}). addTo(map)
+                .bindPopup ("<b>BROKE </b> <p> Camping in der Wildnis am Fluss<p/> <p>wunderschöne Campingplätze direkt am Fluss, Toiletten sind vorhanden für den Rest muss man selbst sorgen.<p/>");
+                
+        L.marker([-26.888757, 153.132157],{icon: bedIcon}). addTo(map)
+                .bindPopup ("<b>BRIBIE ISLAND</b> <p> Camping herrlich entlegenen Plätzen<p/> <p>die Plätz sind nur mit einem Allradwagen erreichbar<p/>");
+
+        L.marker([-27.428443, 153.521314],{icon: bedIcon}). addTo(map)
+                .bindPopup ("<b>NORTH STRADBROKE ISLAND</b> <p> Ferieninsel für Brisbaner direkt vor der Nase<p/> <p>Campingplätz mit schönem Blick auf den hübschen Home Beach<p/> <p>Es gibt auch ein paar günstige Stellplätze ab vom Schuss mit einem Allradwagen erreichbar<p/>");
+
+        L.marker([-38.381814, 142.483859],{icon: bedIcon}). addTo(map)
+                .bindPopup ("<b>WARRNAMBOOL</b> <p>Ein schönes vorallem großes Motel mit einem Bad in dem man einen kleinen Wal drin unterbringen kann<p/> <p>Warrnambool war ursprünglich eine Siedlung von Walfängern und Robenschlägern.<p/> <p>Heute ist die Stadt ein größeres regionales Zentrum des Handels und der Walbeobachtung.<p/>");
+
+        L.marker([-33.73003, 150.29778],{icon: bedIcon}). addTo(map)
+                .bindPopup ("<b>KATOOMBA CAMP SITE</b> <p>Toll gelegener Campingplatz. Von hier aus kann man Wanderungen antreten zu den Three Sisters oder auch in kleine aber feine Stadt spazieren<p/> <p>Der Campingplatz ist trotz Tourianzugspunkte sehr ruhig und nicht überbevölkert und bietet eine schöne Küche und ein sauberes Bad<p/>");
+
+         <!-- Begin Marker Phil Neuseeland -->
+     
+        L.marker([-42.434892, 171.730555],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Jim's Flat Hut</b><br />4 Betten, Ofenheizung, Toilette, Gas, Strom, Wassertank.").closePopup();
+			
+		L.marker([-42.705937, 171.561224],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Camp Creek Hut</b><br />6 Betten, Ofeheizung, Toilette, Wassertank.").closePopup();
+			
+		L.marker([-42.293355, 171.391854],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Croesus Top Hut</b><br />3 Betten, Heizung, Toilette, Feuerstelle.").closePopup();
+
+		L.marker([-42.663576, 171.709333],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Lake Morgan Hut</b><br />6 Betten.").closePopup();
+			
+		L.marker([-42.324441, 172.339621],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Pell Stream Hut</b><br />4 Betten, Ofenheizung, Toilette.").closePopup();
+			
+		L.marker([-42.614289, 171.83714],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Waikiti Hut</b><br />6 Betten, Feuerstelle.").closePopup();
+		
+		L.marker([-41.60634, 172.197552],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Goat Creek Hut</b><br />4 Betten, Feuerstelle, Ofenheizung.").closePopup();
+			
+		L.marker([-41.238318, 172.275831],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Greys Hut</b><br />6 Betten, Ofenheizung.").closePopup();	
+			
+		L.marker([-41.33237, 172.30395],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Kakapo Hut</b><br />4 Betten, Ofenheizung.").closePopup();		
+		
+		L.marker([-42.928146, 171.198489],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Boo Boo Hut</b><br />4 Betten, Toilette, Ofenheizung.").closePopup();
+			
+		L.marker([-43.158109, 170.849824],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>County Stream Hut</b><br />6 Betten, Wassertank, Toilette.").closePopup();	
+		
+		L.marker([-43.003624, 170.93465],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Explorer Hut</b><br />4 Betten, Heizung, toilette, Wassertank.").closePopup();
+        
+		L.marker([-43.031729, 171.11084],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Frisco Hut</b><br />4 Betten, toilette.").closePopup();
+		
+		L.marker([-43.348328, 170.48217],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Nolans Hut</b><br />4 Betten, Heizung, Toilette.").closePopup();
+			
+		L.marker([-43.922923, 169.689232],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Creswicke Flat Hut</b><br />4 Betten, Heizung.").closePopup();
+			
+		L.marker([-43.823714, 169.455463],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Middle Head Hut</b><br />6 Betten, Heizung, Toilette, Wassertank.").closePopup();
+
+		L.marker([-44.165568, 168.311149],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Spoon Hut</b><br />4 Betten.").closePopup();	
+		
+		L.marker([-44.489066, 167.943009],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Kaipo Hut</b><br />6 Betten, Ofenheizung.").closePopup();
+			
+		L.marker([-45.048274, 167.307881],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Caswell Sound Hut</b><br />4 Betten, Ofenheizung, nur mit Boot erreichbar.").closePopup();
+
+		L.marker([-45.525483, 167,263147],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>West Arm Hut </b><br />6 Betten.").closePopup();
+			
+		L.marker([-46.142993, 166.629289],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Landing Shed Hut </b><br />7 Betten, nur mit Boot erreichbar.").closePopup();
+			
+		L.marker([-46.123294, 166.672102],{icon: bedIcon}).addTo(map)
+			.bindPopup("<b>Te Oneroa A-frame Hut</b><br />2 Betten, nur mit Boot erreichbar.").closePopup();	
+
+		
+	
+
+		
+		var popup = L.popup();
+
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent("Koordinaten an dieser Stelle " + e.latlng.toString())
+				.openOn(map)
+				
+		}
+
+		map.on('click', onMapClick);
+		
+		
+		
+		
+		function onLocationFound(e) {
+			 var radius = parseInt( e.accuracy / 2);
+
+		L.marker(e.latlng).addTo(map)
+			.bindPopup("You are within " + radius + " meters from this point").closePopup();
+
+			L.circle(e.latlng, radius).addTo(map);
+	}
+
+		function onLocationError(e) {
+			alert(e.message);
+		}
+
+		map.on('locationfound', onLocationFound);
+		map.on('locationerror', onLocationError);
+
+		map.locate({setView: true, maxZoom: 16});
+
+
+		
+	
+    </script>
+	
+<br/> 
+<!-- Beginn Kartenbeschreibung -->
+   	
+ <div>
+
+<table  border="1px" bgcolor="#E0E0E0"  cellpadding="3px" >
+	
+<tr>
+    <td>  <font face="Arial">Übernachtungsspot </font>	</td> 
+    <td align="center" width="70"> <image src="bed.png" width="33" height="40" alt="Schlafen"> </td>
+</tr>	
+<tr>	
+	<td>   <font face="Arial">Naturspot </font>	</td>
+	<td align="center"  width="70"> <image src="leaf-green.png"  width="33" height="90" alt="Blatt"> </td>
+</tr>
+<tr>
+	<td>  <font face="Arial">Surfspot </font>	</td>
+	<td align="center" width="70"> <image src="surf.png"  width="33" height="90" alt="Surfboard"></td>
+	</tr>
+
+</table>
+
+</div>  
+</div>
+  <!-- Ende Kartenbeschreibung -->	
+	
+	
+
+<br/>	<br/> <br/> <br/><br/>	<br/> 	
+	
+</body>
+</html>
