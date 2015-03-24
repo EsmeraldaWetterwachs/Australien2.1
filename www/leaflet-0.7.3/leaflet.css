@@ -12,7 +12,7 @@
 }
 
 #container .prevButton{
-	height:90px;
+	height:153px;
 	width:68px;
 	position:absolute;
 	background:url('C:\Users\Anja\Desktop\Uni\Winter_14_15\Wagner_App\neu\www\buttons.png') no-repeat;
@@ -27,7 +27,7 @@
 #container .prevButton:hover{ background-position:center-left;left:0;}
 
 #container .nextButton{
-	height:90px;
+	height:153px;
 	width:68px;
 	position:absolute;
 	background:url('C:\Users\Anja\Desktop\Uni\Winter_14_15\Wagner_App\neu\www\buttons.png') no-repeat;
